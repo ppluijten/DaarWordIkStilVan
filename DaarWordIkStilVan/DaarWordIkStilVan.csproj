@@ -31,6 +31,8 @@
     <TypeScriptCompile Include="app.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="bower.json" />
     <None Include="Publish.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
