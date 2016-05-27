@@ -1,0 +1,46 @@
+﻿{
+  "paths": {
+    "webroot": "./",
+    "less": {
+      "watch": "./content/less/*.less",
+      "source": "./content/less/styles.less",
+      "includePaths": [ "./content", "./bower_components/bootstrap/less" ],
+      "target": "./content/css/styles.css"
+    },
+    "css": {
+      "watch": "./content/css/*.css",
+      "source": "./content/css/*.css",
+      "target": "./content/site.min.css"
+    },
+    "js": {
+      "watch": "./content/js/*.js",
+      "source": "./content/js/*.js",
+      "target": "./content/site.min.js"
+    },
+    "views": {
+      "watch": "./Areas/**/Views/**/*.cshtml"
+    },
+    "libsWatch": [ "./bower_components/**/*.css", "./bower_components/**/*.js" ],
+    "libsDestFonts": "./content/fonts"
+  },
+  "libs": {
+    "js": {
+      "libs-main-js": {
+        "libTarget": "./content/libs.min.js",
+        "libInclude": [ "bower_components/**/*.js" ]
+      }
+    },
+    "css": {
+      "libs-main-css": {
+        "libTarget": "./content/libs.min.css",
+        "libInclude": "bower_components/**/*.css"
+      }
+    },
+    "less": {
+      "libs-main-less": {
+        "libTarget": "./content/libs.less",
+        "libInclude": "bower_components/**/*.less"
+      }
+    }
+  }
+}
