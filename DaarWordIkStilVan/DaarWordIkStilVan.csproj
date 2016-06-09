@@ -41,6 +41,10 @@
     <Content Include="gulpfile.config.json" />
     <Content Include="content\less\styles.less" />
     <Content Include="content\libs.less" />
+    <Content Include="content\less\variables.less" />
+    <Content Include="content\fonts\cookies-milk-italic.ttf" />
+    <Content Include="content\less\fonts.less" />
+    <Content Include="content\fonts\cookies-milk-regular.ttf" />
     <None Include="Publish.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

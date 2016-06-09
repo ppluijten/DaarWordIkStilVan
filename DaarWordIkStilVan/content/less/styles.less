@@ -1,4 +1,11 @@
 ﻿@import "libs";
+@import "fonts.less";
+@import "variables.less";
+
+@font-family-bootstrap-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-cookies-milk: "Cookies & Milk", @font-family-bootstrap-sans-serif;
+/*@font-family-sans-serif: @font-family-cookies-milk;*/
+@font-family-numbers: @font-family-bootstrap-sans-serif;
 
 body {
     // To get below the navbar
@@ -6,4 +13,22 @@ body {
 
     // For cleaner bottom
     padding-bottom: 30px;
+}
+
+.index {
+    font-family: @font-family-cookies-milk;
+    font-style: italic;
+}
+
+.wiebenik {
+    font-family: @font-family-cookies-milk;
+    font-style: italic;
+
+    p {
+        font-size: 21px;
+    }
+}
+
+#content {
+    font-family: @font-family-numbers;
 }
