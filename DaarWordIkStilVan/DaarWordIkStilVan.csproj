@@ -22,12 +22,27 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="activiteiten.html" />
     <Content Include="contact.html" />
     <Content Include="content\css\styles.css" />
+    <Content Include="content\images\kraanvogels.png" />
+    <Content Include="content\images\kraanvogels_transparant.png" />
+    <Content Include="content\images\kraanvogels_zwart.png" />
+    <Content Include="content\images\logo.png" />
+    <Content Include="content\images\water.png" />
+    <Content Include="content\images\water_transparant.png" />
+    <Content Include="content\images\water_zwart.png" />
+    <Content Include="content\images\wortels.png" />
+    <Content Include="content\images\wortels_transparant.png" />
+    <Content Include="content\images\wortels_zwart.png" />
+    <Content Include="content\images\zand.png" />
+    <Content Include="content\images\zand_transparant.png" />
+    <Content Include="content\images\zand_zwart.png" />
     <Content Include="content\libs.min.js" />
     <Content Include="content\site.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.js" />
+    <Content Include="achtergrond.html" />
     <Content Include="index.html" />
     <Content Include="web.config" />
     <Content Include="wiebenik.html" />

@@ -4,31 +4,82 @@
 
 @font-family-bootstrap-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-cookies-milk: "Cookies & Milk", @font-family-bootstrap-sans-serif;
-/*@font-family-sans-serif: @font-family-cookies-milk;*/
 @font-family-numbers: @font-family-bootstrap-sans-serif;
 
+@text-color: @green-4;
+@link-color: @green-4;
+@input-color: @green-4;
+@input-color-placeholder: @green-6; ////TODO: Is this ok?
+@link-hover-color: @green-2;
+
 body {
-    // To get below the navbar
-    padding-top: 70px;
-
-    // For cleaner bottom
-    padding-bottom: 30px;
+    padding-top: 60px;
+    padding-bottom: 20px;
 }
 
-.index {
-    font-family: @font-family-cookies-milk;
-    font-style: italic;
-}
+// Jumbotron
+@jumbotron-heading-color: white;
+@border-radius-large: 20px;
+@jumbotron-bg: @green-6;
 
-.wiebenik {
-    font-family: @font-family-cookies-milk;
-    font-style: italic;
+.jumbotron {
+    h1,
+    .h1 {
+        font-family: @font-family-cookies-milk;
+        font-style: italic;
+    }
 
-    p {
-        font-size: 21px;
+    h2,
+    .h2 {
+        color: @jumbotron-heading-color;
+        font-size: @jumbotron-font-size;
+    }
+
+    &.see-through {
+        background-color: rgba(157,207,173,0.9);
     }
 }
 
-#content {
-    font-family: @font-family-numbers;
+// Navbar
+@navbar-margin-bottom: 90px;
+@nav-link-hover-bg: #ffffff;
+
+.navbar {
+    font-size: 35px;
+    font-family: @font-family-cookies-milk;
+    font-style: italic;
+
+    .navbar-brand {
+        font-size: 35px;
+    }
+
+    .navbar-toggle {
+        border-color: @navbar-default-toggle-border-color;
+
+        &:hover,
+        &:focus {
+            background-color: @navbar-default-toggle-hover-bg;
+        }
+
+        .icon-bar {
+            background-color: @navbar-default-toggle-icon-bar-bg;
+        }
+    }
+
+    .navbar-nav-left {
+        margin-left: -@navbar-padding-horizontal;
+    }
+
+    .navbar-collapse {
+        @media (max-width: @grid-float-breakpoint-max) {
+            text-align: center;
+        }
+    }
+}
+
+// Inputs
+.form-control {
+    font-size: 17px;
+    text-transform: uppercase;
+    //height: @input-height-base; ////TODO: Make inputs at least the height of their button counterpart (base line-height + padding + border)
 }
