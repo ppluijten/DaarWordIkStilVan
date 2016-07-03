@@ -9,12 +9,50 @@
 @text-color: @green-4;
 @link-color: @green-4;
 @input-color: @green-4;
-@input-color-placeholder: @green-6; ////TODO: Is this ok?
+@input-color-placeholder: @green-6;
 @link-hover-color: @green-2;
+@brand-primary: @green-4;
+@brand-info: @green-6;
 
 body {
     padding-top: 60px;
     padding-bottom: 20px;
+
+    &.roots {
+        background-image: url('@{images-path}/wortels.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: top;
+
+        @media (max-width: @grid-float-breakpoint-max) {
+            .navbar {
+                background-color: rgba(157,207,173,0.9);
+                border-radius: @border-radius-large;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+// Forms, Buttons and Inputs
+@form-group-margin-bottom: 30px;
+@btn-default-color: @brand-info;
+@btn-default-border: darken(@brand-info, 5%);
+
+@border-radius-large: 20px;
+@padding-large-vertical: 40px;
+@padding-large-horizontal: 40px;
+
+.form-control,
+.btn {
+    text-transform: uppercase;
+}
+
+@media (max-width: @grid-float-breakpoint-max) {
+    .mobile-margin-bottom {
+        margin-bottom: 30px;
+    }
 }
 
 // Jumbotron
@@ -42,7 +80,7 @@ body {
 
 // Navbar
 @navbar-margin-bottom: 90px;
-@nav-link-hover-bg: #ffffff;
+@nav-link-hover-bg: transparent;
 
 .navbar {
     font-size: 35px;
@@ -54,15 +92,15 @@ body {
     }
 
     .navbar-toggle {
-        border-color: @navbar-default-toggle-border-color;
+        border-color: @green-4;
 
         &:hover,
         &:focus {
-            background-color: @navbar-default-toggle-hover-bg;
+            background-color: @green-6;
         }
 
         .icon-bar {
-            background-color: @navbar-default-toggle-icon-bar-bg;
+            background-color: @green-4;
         }
     }
 
@@ -77,9 +115,30 @@ body {
     }
 }
 
-// Inputs
-.form-control {
-    font-size: 17px;
-    text-transform: uppercase;
-    //height: @input-height-base; ////TODO: Make inputs at least the height of their button counterpart (base line-height + padding + border)
+// Home
+.home {
+    .navbar {
+        margin-bottom: 0;
+    }
+
+    .jumbotron {
+        background-color: white;
+
+        img.fill-out {
+            width: 100%;
+        }
+    }
+}
+
+// Activiteiten
+.activiteiten {
+    .jumbotron {
+        h2, .h2 {
+            color: @green-4;
+        }
+
+        b {
+            color: white;
+        }
+    }
 }

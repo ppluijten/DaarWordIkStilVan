@@ -28,6 +28,7 @@
     <Content Include="content\images\kraanvogels.png" />
     <Content Include="content\images\kraanvogels_transparant.png" />
     <Content Include="content\images\kraanvogels_zwart.png" />
+    <Content Include="content\images\logo-2.png" />
     <Content Include="content\images\logo.png" />
     <Content Include="content\images\water.png" />
     <Content Include="content\images\water_transparant.png" />
