@@ -1,9 +1,144 @@
 ﻿@import "libs";
+@import "fonts.less";
+@import "variables.less";
+
+@font-family-bootstrap-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-cookies-milk: "Cookies & Milk", @font-family-bootstrap-sans-serif;
+@font-family-numbers: @font-family-bootstrap-sans-serif;
+
+@text-color: @green-4;
+@link-color: @green-4;
+@input-color: @green-4;
+@input-color-placeholder: @green-6;
+@link-hover-color: @green-2;
+@brand-primary: @green-4;
+@brand-info: @green-6;
 
 body {
-    // To get below the navbar
-    padding-top: 70px;
+    padding-top: 60px;
+    padding-bottom: 20px;
 
-    // For cleaner bottom
-    padding-bottom: 30px;
+    &.roots {
+        background-image: url('@{images-path}/wortels.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: top;
+
+        @media (max-width: @grid-float-breakpoint-max) {
+            .navbar {
+                background-color: rgba(157,207,173,0.9);
+                border-radius: @border-radius-large;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+// Forms, Buttons and Inputs
+@form-group-margin-bottom: 30px;
+@btn-default-color: @brand-info;
+@btn-default-border: darken(@brand-info, 5%);
+
+@border-radius-large: 20px;
+@padding-large-vertical: 40px;
+@padding-large-horizontal: 40px;
+
+.form-control,
+.btn {
+    text-transform: uppercase;
+}
+
+@media (max-width: @grid-float-breakpoint-max) {
+    .mobile-margin-bottom {
+        margin-bottom: 30px;
+    }
+}
+
+// Jumbotron
+@jumbotron-heading-color: white;
+@border-radius-large: 20px;
+@jumbotron-bg: @green-6;
+
+.jumbotron {
+    h1,
+    .h1 {
+        font-family: @font-family-cookies-milk;
+        font-style: italic;
+    }
+
+    h2,
+    .h2 {
+        color: @jumbotron-heading-color;
+        font-size: @jumbotron-font-size;
+    }
+
+    &.see-through {
+        background-color: rgba(157,207,173,0.9);
+    }
+}
+
+// Navbar
+@navbar-margin-bottom: 90px;
+@nav-link-hover-bg: transparent;
+
+.navbar {
+    font-size: 35px;
+    font-family: @font-family-cookies-milk;
+    font-style: italic;
+
+    .navbar-brand {
+        font-size: 35px;
+    }
+
+    .navbar-toggle {
+        border-color: @green-4;
+
+        &:hover,
+        &:focus {
+            background-color: @green-6;
+        }
+
+        .icon-bar {
+            background-color: @green-4;
+        }
+    }
+
+    .navbar-nav-left {
+        margin-left: -@navbar-padding-horizontal;
+    }
+
+    .navbar-collapse {
+        @media (max-width: @grid-float-breakpoint-max) {
+            text-align: center;
+        }
+    }
+}
+
+// Home
+.home {
+    .navbar {
+        margin-bottom: 0;
+    }
+
+    .jumbotron {
+        background-color: white;
+
+        img.fill-out {
+            width: 100%;
+        }
+    }
+}
+
+// Activiteiten
+.activiteiten {
+    .jumbotron {
+        h2, .h2 {
+            color: @green-4;
+        }
+
+        b {
+            color: white;
+        }
+    }
 }
