@@ -1,28 +1,26 @@
-﻿class Greeter {
-    element: HTMLElement;
-    span: HTMLElement;
-    timerToken: number;
+﻿///<reference path="content/ts/typings/jquery.d.ts"/>
 
-    constructor(element: HTMLElement) {
-        this.element = element;
-        this.element.innerHTML += "De tijd is: ";
-        this.span = document.createElement("span");
-        this.element.appendChild(this.span);
-        this.span.innerText = new Date().toLocaleString("nl-NL");
+(($ => {
+    $(() => {
+        // document.ready
+        var pages = new Pages("pages");
+        $("div[data-page]")
+            .each(function () {
+                pages.render($(this));
+            });
+    });
+
+    class Pages {
+        folder: string;
+
+        constructor(folder: string) {
+            this.folder = folder;
+        }
+
+        render(element: JQuery) {
+            $.get(this.folder + "/" + element.data("page") + ".html", data => {
+                element.html(data);
+            });
+        }
     }
-
-    start() {
-        this.timerToken = setInterval(() => this.span.innerHTML = new Date().toLocaleString("nl-NL"), 500);
-    }
-
-    stop() {
-        clearTimeout(this.timerToken);
-    }
-
-}
-
-window.onload = () => {
-    var el = document.getElementById("content");
-    var greeter = new Greeter(el);
-    greeter.start();
-};
+})(jQuery));

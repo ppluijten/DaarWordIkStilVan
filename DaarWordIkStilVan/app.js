@@ -1,23 +1,20 @@
-var Greeter = (function () {
-    function Greeter(element) {
-        this.element = element;
-        this.element.innerHTML += "De tijd is: ";
-        this.span = document.createElement("span");
-        this.element.appendChild(this.span);
-        this.span.innerText = new Date().toLocaleString("nl-NL");
-    }
-    Greeter.prototype.start = function () {
-        var _this = this;
-        this.timerToken = setInterval(function () { return _this.span.innerHTML = new Date().toLocaleString("nl-NL"); }, 500);
-    };
-    Greeter.prototype.stop = function () {
-        clearTimeout(this.timerToken);
-    };
-    return Greeter;
-}());
-window.onload = function () {
-    var el = document.getElementById("content");
-    var greeter = new Greeter(el);
-    greeter.start();
-};
-//# sourceMappingURL=app.js.map
+((function ($) {
+    $(function () {
+        var pages = new Pages("pages");
+        $("div[data-page]")
+            .each(function () {
+            pages.render($(this));
+        });
+    });
+    var Pages = (function () {
+        function Pages(folder) {
+            this.folder = folder;
+        }
+        Pages.prototype.render = function (element) {
+            $.get(this.folder + "/" + element.data("page") + ".html", function (data) {
+                element.html(data);
+            });
+        };
+        return Pages;
+    }());
+})(jQuery));
