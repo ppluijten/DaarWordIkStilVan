@@ -48,6 +48,10 @@
     <Content Include="achtergrond.html" />
     <Content Include="index.html" />
     <Content Include="pages\achtergrond.html" />
+    <None Include="pages\activiteiten.json" />
+    <Content Include="pages\activiteiten\descriptions\stiltewandelingen.html" />
+    <Content Include="pages\activiteiten\images\stiltewandelingen.png" />
+    <Content Include="pages\activiteiten\pages\stiltewandelingen.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -74,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\js\" />
-    <Folder Include="pages\activiteiten\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
