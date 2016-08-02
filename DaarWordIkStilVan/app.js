@@ -1,4 +1,3 @@
-///<reference path="content/ts/typings/jquery.d.ts"/>
 ((function ($) {
     $(function () {
         var pages = new Pages("pages");
@@ -6,22 +5,37 @@
             .each(function () {
             pages.render($(this));
         });
-        var queryString = {};
-        $.each(document.location.search.substr(1).split("&"), function (c, q) {
-            var i = q.split("=");
-            queryString[i[0].toString()] = i[1].toString();
+        $("body[data-background]")
+            .each(function () {
+            console.log($(this));
+            $(this).css("background-image", "url('content/images/" + $(this).data("background") + ".png')");
         });
+        var queryString = getQueryString();
         var page = queryString.page;
         if (page != null && page !== "") {
-            pages.renderActivityPage(page);
+            $(".activities")
+                .each(function () {
+                pages.renderActivityPage($(this), page);
+            });
         }
         else {
+            console.log("activities");
             $(".activities")
                 .each(function () {
                 pages.renderActivities($(this));
             });
         }
     });
+    function getQueryString() {
+        var queryString = {};
+        $.each(document.location.search.substr(1).split("&"), function (c, q) {
+            var i = q.split("=");
+            if (i[0] != null && i[1] != null) {
+                queryString[i[0].toString()] = i[1].toString();
+            }
+        });
+        return queryString;
+    }
     var Pages = (function () {
         function Pages(folder) {
             this.folder = folder;
@@ -42,13 +56,15 @@
         };
         Pages.prototype.renderActivity = function (element, activityname, activitytitle) {
             $.get(this.folder + ("/activiteiten/descriptions/" + activityname + ".html"), function (data) {
-                element.append("<div class='row activity'>\n                    <div class='activity-image' style='background-image: url(pages/activiteiten/images/" + activityname + ".png);'></div>\n                    <div class='activity-description'>\n                        <h1>" + activitytitle + "</h1>\n                        <p>\n                            " + data + "\n                            <a href='activiteiten.html?page=" + activityname + "'>lees meer</a>\n                        </p>\n                    </div>\n                </div>");
+                element.append("<div class='row activity'>\n                        <div class='activity-image' style='background-image: url(pages/activiteiten/images/" + activityname + ".png);'></div>\n                        <div class='activity-description'>\n                            <h1>\n                                <a href='activiteiten.html?page=" + activityname + "'>" + activitytitle + "</a>\n                            </h1>\n                            <p>\n                                " + data + "\n                                <a href='activiteiten.html?page=" + activityname + "'>lees meer</a>\n                            </p>\n                        </div>\n                </div>");
             });
         };
-        Pages.prototype.renderActivityPage = function (activityname) {
-            console.log(activityname);
+        Pages.prototype.renderActivityPage = function (element, activityname) {
+            $.get(this.folder + ("/activiteiten/pages/" + activityname + ".html"), function (data) {
+                element.html(data);
+                element.addClass("jumbotron");
+            });
         };
         return Pages;
     }());
 })(jQuery));
-//# sourceMappingURL=app.js.map
