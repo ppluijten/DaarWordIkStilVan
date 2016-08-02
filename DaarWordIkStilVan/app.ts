@@ -7,10 +7,21 @@
             .each(function () {
                 pages.render($(this));
             });
-        $(".activities")
-            .each(function () {
-                pages.renderActivities($(this));
-            });
+
+        var queryString: any = {};
+        $.each(document.location.search.substr(1).split("&"), (c, q) => {
+            var i = q.split("=");
+            queryString[i[0].toString()] = i[1].toString();
+        });
+        var page = queryString.page;
+        if (page != null && page !== "") {
+            pages.renderActivityPage(page);
+        } else {
+            $(".activities")
+                .each(function () {
+                    pages.renderActivities($(this));
+                });
+        }
     });
 
     class Pages {
@@ -30,12 +41,12 @@
             element.html("");
             $.get(this.folder + "/activiteiten.json", data => {
                 for (var i = 0; i < data.activities.length; i++) {
-                    this.renderAcvitity(element, data.activities[i].name, data.activities[i].title);
+                    this.renderActivity(element, data.activities[i].name, data.activities[i].title);
                 }
             });
         }
 
-        renderAcvitity(element: JQuery, activityname: string, activitytitle: string) {
+        renderActivity(element: JQuery, activityname: string, activitytitle: string) {
             $.get(this.folder + `/activiteiten/descriptions/${activityname}.html`, data => {
                 element.append(`<div class='row activity'>
                     <div class='activity-image' style='background-image: url(pages/activiteiten/images/${activityname}.png);'></div>
@@ -43,11 +54,15 @@
                         <h1>${activitytitle}</h1>
                         <p>
                             ${data}
-                            <a href='#'>lees meer</a>
+                            <a href='activiteiten.html?page=${activityname}'>lees meer</a>
                         </p>
                     </div>
                 </div>`);
             });
+        }
+
+        renderActivityPage(activityname: string) {
+            console.log(activityname);
         }
     }
 })(jQuery));
