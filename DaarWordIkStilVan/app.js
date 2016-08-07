@@ -62,6 +62,7 @@
         Pages.prototype.renderActivityPage = function (element, activityname) {
             $.get(this.folder + ("/activiteiten/pages/" + activityname + ".html"), function (data) {
                 element.html(data);
+                element.append("<p>Ben je nieuwsgierig geworden en wil je meedoen, of heb je vragen? Bel of <a href='mailto:info@daarwordikstilvan.nl'>mail</a> dan gerust!</p>");
                 element.addClass("jumbotron");
             });
         };
