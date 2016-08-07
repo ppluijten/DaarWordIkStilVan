@@ -43,30 +43,30 @@
                 </div>
             </div>
         </nav>
-        <div class="jumbotron see-through">
+        <div class="jumbotron see-through" id="contactform">
             <h1>Contact</h1>
             <form class="form-horizontal">
                 <div class="form-group">
-                    <div class="col-sm-6 mobile-margin-bottom">
-                        <input type="text" class="form-control" id="firstname" placeholder="Voornaam">
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="lastname" placeholder="Achternaam">
+                    <div class="col-sm-12">
+                        <span id="namevalid" class="validation"></span>
+                        <input type="text" class="form-control" id="name" placeholder="Naam">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
+                        <span id="emailvalid" class="validation"></span>
                         <input type="email" class="form-control" id="email" placeholder="E-mailadres">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
+                        <span id="messagevalid" class="validation"></span>
                         <textarea class="form-control" rows="10" id="message" placeholder="Bericht" maxlength="750"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <button type="submit" class="btn btn-block btn-primary">Versturen</button>
+                        <button type="button" onclick="sendEmail(this);" class="btn btn-block btn-primary">Versturen</button>
                     </div>
                 </div>
             </form>
