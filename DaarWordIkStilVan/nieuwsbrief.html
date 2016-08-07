@@ -43,8 +43,9 @@
                 </div>
             </div>
         </nav>
-        <div class="jumbotron see-through">
+        <div class="jumbotron see-through" id="newsletterform">
             <h1>Nieuwsbrief</h1>
+            <span id="valid" class="validation"></span>
             <form class="form-horizontal">
                 <div class="form-group">
                     <div class="col-sm-6 mobile-margin-bottom">
@@ -56,7 +57,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <button type="submit" class="btn btn-block btn-primary">Aanmelden</button>
+                        <button type="button" onclick="subscribeToNewsletter(this);" class="btn btn-block btn-primary">Aanmelden</button>
                     </div>
                 </div>
             </form>
