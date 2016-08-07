@@ -46,17 +46,17 @@
         };
         Pages.prototype.renderActivities = function (element) {
             var _this = this;
-            element.html("");
+            var innerElement = $("<div class='row'></div>");
+            element.html(innerElement);
             $.get(this.folder + "/activiteiten.json", function (data) {
                 for (var i = 0; i < data.activities.length; i++) {
-                    _this.renderActivity(element, data.activities[i].name, data.activities[i].title);
+                    _this.renderActivity(innerElement, data.activities[i].name, data.activities[i].title);
                 }
             });
         };
         Pages.prototype.renderActivity = function (element, activityname, activitytitle) {
             $.get(this.folder + ("/activiteiten/descriptions/" + activityname + ".html"), function (data) {
-                element.append("<div class='row activity'>\n                        <div class='activity-image' style='background-image: url(pages/activiteiten/images/" + activityname + ".png);'></div>\n                        <div class='activity-description'>\n                            <h1>\n                                <a href='activiteiten.html?page=" + activityname + "'>" + activitytitle + "</a>\n                            </h1>\n                            <p>\n                                " + data + "\n                                <a href='activiteiten.html?page=" + activityname + "'>lees meer</a>\n                            </p>\n                        </div>\n                </div>");
-                //TODO: col-xs-12?
+                element.append("<div class='col-xs-12 activity'>\n                    <div class='activity-image' style='background-image: url(pages/activiteiten/images/" + activityname + ".png);'></div>\n                    <div class='activity-description'>\n                        <h1>\n                            <a href='activiteiten.html?page=" + activityname + "'>" + activitytitle + "</a>\n                        </h1>\n                        <p>\n                            " + data + "\n                            <a href='activiteiten.html?page=" + activityname + "'>lees meer</a>\n                        </p>\n                    </div>\n                </div>");
             });
         };
         Pages.prototype.renderActivityPage = function (element, activityname) {
