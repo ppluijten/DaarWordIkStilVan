@@ -17,21 +17,17 @@
 body {
     padding-top: 60px;
     padding-bottom: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+}
 
-    &.roots {
-        background-image: url('@{images-path}/wortels.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position-x: center;
-        background-position-y: top;
-
-        @media (max-width: @grid-float-breakpoint-max) {
-            .navbar {
-                background-color: rgba(157,207,173,0.9);
-                border-radius: @border-radius-large;
-                padding: 5px;
-            }
-        }
+@media (max-width: @grid-float-breakpoint-max) {
+    .navbar.mobile-green {
+        background-color: rgba(157,207,173,0.9);
+        border-radius: @border-radius-large;
+        padding: 5px;
     }
 }
 
@@ -40,9 +36,7 @@ body {
 @btn-default-color: @brand-info;
 @btn-default-border: darken(@brand-info, 5%);
 
-@border-radius-large: 20px;
-@padding-large-vertical: 40px;
-@padding-large-horizontal: 40px;
+@border-radius-base: 10px;
 
 .form-control,
 .btn {
@@ -79,7 +73,7 @@ body {
 }
 
 // Navbar
-@navbar-margin-bottom: 90px;
+@navbar-margin-bottom: 60px;
 @nav-link-hover-bg: transparent;
 
 .navbar {
@@ -130,6 +124,32 @@ body {
     }
 }
 
+.jumbotron.home-logo {
+    background-image: url('images/logo.png');
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 260px;
+
+    @media (min-width: @screen-sm-min) {
+        height: 600px;
+    }
+
+    @media (min-width: @screen-md-min) {
+        height: 700px;
+    }
+}
+
+// Loading
+.loading {
+    color: white;
+
+    img {
+        width: 64px;
+        height: 64px;
+    }
+}
+
 // Activiteiten
 .activiteiten {
     .jumbotron {
@@ -140,5 +160,41 @@ body {
         b {
             color: white;
         }
+    }
+}
+
+.activity {
+    height: 150px;
+
+    .activity-image {
+        height: 100%;
+        border-radius: 20px 0 0 20px;
+        overflow: hidden;
+        background-size: cover;
+        width: 150px;
+        float: left;
+    }
+
+    .activity-description {
+        height: 100%;
+        border: 5px solid @green-5;
+        border-radius: 0 20px 20px 0;
+        width: ~"calc(100% - 150px)";
+        float: left;
+        padding: 0 30px;
+
+        h1 {
+            font-family: @font-family-cookies-milk;
+            font-style: italic;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 17px;
+        }
+    }
+
+    &:not(:first-child) {
+        margin-top: 30px;
     }
 }

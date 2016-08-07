@@ -22,6 +22,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\images\loading.svg" />
     <Content Include="nieuwsbrief.html" />
     <Content Include="activiteiten.html" />
     <Content Include="contact.html" />
@@ -46,10 +47,16 @@
     <Content Include="gulpfile.js" />
     <Content Include="achtergrond.html" />
     <Content Include="index.html" />
+    <Content Include="pages\achtergrond.html" />
+    <None Include="pages\activiteiten.json" />
+    <Content Include="pages\activiteiten\descriptions\stiltewandelingen.html" />
+    <Content Include="pages\activiteiten\images\stiltewandelingen.png" />
+    <Content Include="pages\activiteiten\pages\stiltewandelingen.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <None Include="content\ts\typings\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
@@ -71,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\js\" />
-    <Folder Include="content\ts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
