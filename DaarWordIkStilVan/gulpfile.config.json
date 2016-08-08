@@ -15,8 +15,7 @@
     "ts": {
       "watch": "./content/ts/*.ts",
       "source": "./content/ts/*.ts",
-      "target": "./content/js/site.js",
-      "dtsTarget": "./content/ts/site.d.ts"
+      "target": "./content/js/site.js"
     },
     "js": {
       "watch": "./content/js/*.js",
