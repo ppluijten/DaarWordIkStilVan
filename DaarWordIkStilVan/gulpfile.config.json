@@ -12,6 +12,12 @@
       "source": "./content/css/*.css",
       "target": "./content/site.min.css"
     },
+    "ts": {
+      "watch": [ "./content/ts/*.ts", "!**/*.d.ts" ],
+      "source": [ "./content/ts/*.ts", "!**/*.d.ts" ],
+      "target": "./content/js/site.js",
+      "dtsTarget": "./content/ts/site.d.ts"
+    },
     "js": {
       "watch": "./content/js/*.js",
       "source": "./content/js/*.js",
