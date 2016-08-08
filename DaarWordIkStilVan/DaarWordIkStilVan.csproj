@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="content\ts\typings\jquery.d.ts" />
-    <TypeScriptCompile Include="content\ts\site.d.ts" />
     <TypeScriptCompile Include="content\ts\site.ts" />
   </ItemGroup>
   <ItemGroup>

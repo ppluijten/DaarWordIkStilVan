@@ -13,8 +13,8 @@
       "target": "./content/site.min.css"
     },
     "ts": {
-      "watch": [ "./content/ts/*.ts", "!**/*.d.ts" ],
-      "source": [ "./content/ts/*.ts", "!**/*.d.ts" ],
+      "watch": "./content/ts/*.ts",
+      "source": "./content/ts/*.ts",
       "target": "./content/js/site.js",
       "dtsTarget": "./content/ts/site.d.ts"
     },

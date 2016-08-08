@@ -123,7 +123,7 @@ function sendEmail(element: any): any {
     }
 
     button.prop("disabled", true);
-    button.text("Versturen...");
+    button.text("Uw bericht wordt verstuurd...");
 
     var request = {
         name: name,
@@ -163,7 +163,7 @@ function subscribeToNewsletter(element: any): any {
     }
 
     button.prop("disabled", true);
-    button.text("Aanmelden...");
+    button.text("U wordt aangemeld...");
 
     var request = {
         name: name,
