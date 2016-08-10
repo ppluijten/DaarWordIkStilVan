@@ -67,7 +67,7 @@
             $.get(this.folder + `/activiteiten/descriptions/${activityname}.html`, data => {
                 element.append(`<div class='col-xs-12 activity'>
                     <div class='activity-image' style='background-image: url(pages/activiteiten/images/${activityname}.png);'></div>
-                    <div class='activity-description'>
+                    <div class='activity-description see-through'>
                         <h1>
                             <a href='activiteiten.html?page=${activityname}'>${activitytitle}</a>
                         </h1>
@@ -83,7 +83,6 @@
         renderActivityPage(element: JQuery, activityname: string) {
             $.get(this.folder + `/activiteiten/pages/${activityname}.html`, data => {
                 element.html(data);
-                element.append("<p>Ben je nieuwsgierig geworden en wil je meedoen, of heb je vragen? Bel of <a href='mailto:info@daarwordikstilvan.nl'>mail</a> dan gerust!</p>");
                 element.addClass("jumbotron");
             });
         }

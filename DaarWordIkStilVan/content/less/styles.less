@@ -24,8 +24,9 @@ body {
     text-align: justify;
 }
 
-p a {
-    color: @green-2;
+p a,
+p a:hover{
+    color: white;
     text-decoration: underline;
 }
 
@@ -72,8 +73,19 @@ p a {
         font-size: @jumbotron-font-size;
     }
 
-    &.see-through {
-        background-color: rgba(157,207,173,0.9);
+    &.bottom-line {
+        background-image: url("images/kraanvogel_bottom_transparent.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+    }
+}
+
+.see-through {
+    background-color: rgba(157,207,173,0.9);
+
+    a {
+        color: white;
     }
 }
 
