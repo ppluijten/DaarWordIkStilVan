@@ -22,7 +22,12 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="api\email.php" />
+    <Content Include="api\newsletter.php" />
     <Content Include="content\images\loading.svg" />
+    <Content Include="content\js\site.js" />
+    <Content Include="content\site.min.js" />
+    <Content Include="functions\Email.php" />
     <Content Include="nieuwsbrief.html" />
     <Content Include="activiteiten.html" />
     <Content Include="contact.html" />
@@ -50,13 +55,19 @@
     <Content Include="pages\achtergrond.html" />
     <None Include="pages\activiteiten.json" />
     <Content Include="pages\activiteiten\descriptions\stiltewandelingen.html" />
+    <Content Include="pages\activiteiten\descriptions\wandelmeditatie.html" />
+    <Content Include="pages\activiteiten\images\Bottom_line.png" />
+    <Content Include="pages\activiteiten\images\Me.png" />
     <Content Include="pages\activiteiten\images\stiltewandelingen.png" />
+    <Content Include="pages\activiteiten\images\stiltewandelingen_old.png" />
+    <Content Include="pages\activiteiten\images\wandelmeditatie.png" />
     <Content Include="pages\activiteiten\pages\stiltewandelingen.html" />
+    <Content Include="pages\activiteiten\pages\wandelmeditatie.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
     <None Include="content\ts\typings\jquery.d.ts" />
+    <TypeScriptCompile Include="content\ts\site.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
@@ -69,6 +80,7 @@
     <Content Include="content\less\fonts.less" />
     <Content Include="content\fonts\cookies-milk-regular.ttf" />
     <None Include="Publish.pubxml" />
+    <Content Include="content\ts\tsconfig.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -76,9 +88,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="content\js\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>

@@ -1,4 +1,4 @@
-﻿///<reference path="content/ts/typings/jquery.d.ts"/>
+﻿///<reference path="typings/jquery.d.ts"/>
 
 (($ => {
     $(() => {
@@ -54,29 +54,29 @@
         }
 
         renderActivities(element: JQuery) {
-            element.html("");
+            var innerElement = $("<div class='row'></div>");
+            element.html(innerElement);
             $.get(this.folder + "/activiteiten.json", data => {
                 for (var i = 0; i < data.activities.length; i++) {
-                    this.renderActivity(element, data.activities[i].name, data.activities[i].title);
+                    this.renderActivity(innerElement, data.activities[i].name, data.activities[i].title);
                 }
             });
         }
 
         renderActivity(element: JQuery, activityname: string, activitytitle: string) {
             $.get(this.folder + `/activiteiten/descriptions/${activityname}.html`, data => {
-                element.append(`<div class='row activity'>
-                        <div class='activity-image' style='background-image: url(pages/activiteiten/images/${activityname}.png);'></div>
-                        <div class='activity-description'>
-                            <h1>
-                                <a href='activiteiten.html?page=${activityname}'>${activitytitle}</a>
-                            </h1>
-                            <p>
-                                ${data}
-                                <a href='activiteiten.html?page=${activityname}'>lees meer</a>
-                            </p>
-                        </div>
+                element.append(`<div class='col-xs-12 activity'>
+                    <div class='activity-image' style='background-image: url(pages/activiteiten/images/${activityname}.png);'></div>
+                    <div class='activity-description see-through'>
+                        <h1>
+                            <a href='activiteiten.html?page=${activityname}'>${activitytitle}</a>
+                        </h1>
+                        <p>
+                            ${data}
+                            <a href='activiteiten.html?page=${activityname}'>lees meer</a>
+                        </p>
+                    </div>
                 </div>`);
-                //TODO: col-xs-12?
             });
         }
 
@@ -122,7 +122,7 @@ function sendEmail(element: any): any {
     }
 
     button.prop("disabled", true);
-    button.text("Versturen...");
+    button.text("Uw bericht wordt verstuurd...");
 
     var request = {
         name: name,
@@ -162,7 +162,7 @@ function subscribeToNewsletter(element: any): any {
     }
 
     button.prop("disabled", true);
-    button.text("Aanmelden...");
+    button.text("U wordt aangemeld...");
 
     var request = {
         name: name,

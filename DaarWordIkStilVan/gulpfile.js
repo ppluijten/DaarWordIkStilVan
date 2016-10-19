@@ -23,6 +23,7 @@ html5shiv
 var gulp = require("gulp");
 var del = require("del");
 var notifier = require("node-notifier");
+var merge = require("merge2");
 
 var plugins = require("gulp-load-plugins")();
 var bowerfiles = require("bower-files")();
@@ -30,6 +31,9 @@ var mainbowerfiles = require("main-bower-files")();
 
 var config = require("./gulpfile.config.json");
 var paths = config.paths;
+
+var tsProject = plugins.typescript.createProject("./content/ts/tsconfig.json", { sortOutput: true });
+//var tsProject = plugins.typescript.createProject("./content/ts/tsconfig.json", { sortOutput: true, declaration: true });
 
 gulp.task("default", ["watch"]);
 
@@ -44,6 +48,12 @@ gulp.task("watch", function () {
     var watcherCss = gulp.watch(paths.css.watch, ["min:css"]);
     watcherCss.on("change", function (event) {
         watchFileDeletion(event, "mincss");
+    });
+
+    plugins.util.log("Watching for TS changes.");
+    var watcherTs = gulp.watch(paths.ts.watch, ["ts"]);
+    watcherTs.on("change", function (event) {
+        watchFileDeletion(event, "ts");
     });
 
     plugins.util.log("Watching for JS changes.");
@@ -80,7 +90,7 @@ function watchFileDeletion(event, cacheName) {
     }
 }
 
-gulp.task("clean", ["clean:less", "clean:css", "clean:js", "clean:libs"]);
+gulp.task("clean", ["clean:less", "clean:css", "clean:ts", "clean:js", "clean:libs"]);
 
 gulp.task("clean:less", function () {
     del(paths.less.target);
@@ -88,6 +98,10 @@ gulp.task("clean:less", function () {
 
 gulp.task("clean:css", function () {
     del(paths.css.target);
+});
+
+gulp.task("clean:ts", function () {
+    del(paths.ts.target);
 });
 
 gulp.task("clean:js", function () {
@@ -166,6 +180,36 @@ gulp.task("less", function () {
     //.pipe(plugins.cached("less"))
     //.pipe(plugins.remember("less"))
     //.pipe(plugins.sourcemaps.write(".", { sourceRoot: paths.webroot }))
+});
+
+gulp.task("ts", function () {
+    gulp.src(paths.ts.source, { base: paths.webroot })
+        .pipe(plugins.debug())
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.typescript(tsProject))
+        .pipe(plugins.concat(paths.ts.target))
+        .pipe(plugins.sourcemaps.write())
+        .pipe(plugins.debug())
+        .pipe(gulp.dest(paths.webroot));
+
+    //var tsResult = gulp.src(paths.ts.source, { base: paths.webroot })
+    //    .pipe(plugins.debug())
+    //    .pipe(plugins.sourcemaps.init())
+    //    .pipe(plugins.typescript(tsProject));
+
+    //merge([
+    //    tsResult.dts
+    //        .pipe(plugins.concat(paths.ts.dtsTarget))
+    //        .pipe(plugins.debug())
+    //        .pipe(gulp.dest(paths.webroot)),
+    //    tsResult.js
+    //        .pipe(plugins.concat(paths.ts.target))
+    //        .pipe(plugins.sourcemaps.write())
+    //        .pipe(plugins.debug())
+    //        .pipe(gulp.dest(paths.webroot))
+    //]);
+
+    notifier.notify({ title: "TS Compile", message: "TS compilation was succesful" });
 });
 
 gulp.task("libs", function () {
