@@ -6,16 +6,16 @@
 @font-family-cookies-milk: "Cookies & Milk", @font-family-bootstrap-sans-serif;
 @font-family-numbers: @font-family-bootstrap-sans-serif;
 
-@text-color: @green-4;
-@link-color: @green-4;
-@input-color: @green-4;
-@input-color-placeholder: @green-6;
-@link-hover-color: @green-2;
-@brand-primary: @green-4;
-@brand-info: @green-6;
+@text-color: @color-4;
+@link-color: @color-4;
+@input-color: @color-4;
+@input-color-placeholder: @color-6;
+@link-hover-color: @color-2;
+@brand-primary: @color-4;
+@brand-info: @color-6;
 
 body {
-    padding-top: 60px;
+    padding-top: 30px;
     padding-bottom: 20px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -25,10 +25,36 @@ body {
 
 @media (max-width: @grid-float-breakpoint-max) {
     .navbar.mobile-green {
-        background-color: rgba(157,207,173,0.9);
+        background-color: @color-6-seethrough;
         border-radius: @border-radius-large;
         padding: 5px;
     }
+}
+
+a {
+    -o-transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
+    -moz-transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
+    -webkit-transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
+    transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
+}
+
+a:focus,
+a:hover {
+    color: white;
+    text-decoration: none;
+    box-shadow: @color-2 0px -2px 7px 7px;
+    background-color: @color-2;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    box-shadow: none;
+    color: @color-2;
+
+    /*color: white;
+    text-decoration: none;
+    box-shadow: @color-2 0px -2px 3px 3px;
+    background-color: @color-2;*/
 }
 
 // Forms, Buttons and Inputs
@@ -51,7 +77,7 @@ body {
 // Jumbotron
 @jumbotron-heading-color: white;
 @border-radius-large: 20px;
-@jumbotron-bg: @green-6;
+@jumbotron-bg: @color-6;
 
 .jumbotron {
     h1,
@@ -67,7 +93,7 @@ body {
     }
 
     &.see-through {
-        background-color: rgba(157,207,173,0.9);
+        background-color: @color-6-seethrough;
     }
 }
 
@@ -85,15 +111,15 @@ body {
     }
 
     .navbar-toggle {
-        border-color: @green-4;
+        border-color: @color-4;
 
         &:hover,
         &:focus {
-            background-color: @green-6;
+            background-color: @color-6;
         }
 
         .icon-bar {
-            background-color: @green-4;
+            background-color: @color-4;
         }
     }
 
@@ -135,7 +161,7 @@ body {
     }
 
     @media (min-width: @screen-md-min) {
-        height: 700px;
+        //height: 700px;
     }
 }
 
@@ -153,7 +179,7 @@ body {
 .activiteiten {
     .jumbotron {
         h2, .h2 {
-            color: @green-4;
+            color: @color-4;
         }
 
         b {
@@ -176,7 +202,7 @@ body {
 
     .activity-description {
         height: 100%;
-        border: 5px solid @green-5;
+        border: 5px solid @color-5;
         border-radius: 0 20px 20px 0;
         width: ~"calc(100% - 150px)";
         float: left;
