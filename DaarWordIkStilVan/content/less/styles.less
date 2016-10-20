@@ -47,8 +47,12 @@ a:focus,
 a:hover {
     color: white;
     text-decoration: none;
-    box-shadow: @color-2 0px -2px 7px 7px;
+    box-shadow: 0 0 7px 7px @color-2;
     background-color: @color-2;
+
+    h1 > & {
+        box-shadow: 0 -2px 7px 7px @color-2;
+    }
 }
 
 .nav > li > a:hover,
