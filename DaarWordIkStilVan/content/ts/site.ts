@@ -42,7 +42,7 @@
 
     class Pages {
         folder: string;
-
+        
         constructor(folder: string) {
             this.folder = folder;
         }
@@ -55,12 +55,12 @@
 
         renderActivities(element: JQuery) {
             var innerElement = $("<div class='row'></div>");
-            element.html(innerElement);
             $.get(this.folder + "/activiteiten.json", data => {
                 for (var i = 0; i < data.activities.length; i++) {
                     this.renderActivity(innerElement, data.activities[i].name, data.activities[i].title);
                 }
             });
+            element.empty().append(innerElement);
         }
 
         renderActivity(element: JQuery, activityname: string, activitytitle: string) {
@@ -79,7 +79,7 @@
                 </div>`);
             });
         }
-
+        
         renderActivityPage(element: JQuery, activityname: string) {
             $.get(this.folder + `/activiteiten/pages/${activityname}.html`, data => {
                 element.html(data);
