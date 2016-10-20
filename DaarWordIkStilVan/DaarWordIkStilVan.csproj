@@ -24,7 +24,10 @@
   <ItemGroup>
     <Content Include="api\email.php" />
     <Content Include="api\newsletter.php" />
+    <Content Include="colofon.html" />
     <Content Include="content\images\loading.svg" />
+    <Content Include="content\images\rss_32.png" />
+    <Content Include="content\images\twitter_32.png" />
     <Content Include="content\js\site.js" />
     <Content Include="content\site.min.js" />
     <Content Include="functions\Email.php" />
@@ -63,6 +66,7 @@
     <Content Include="pages\activiteiten\images\wandelmeditatie.png" />
     <Content Include="pages\activiteiten\pages\stiltewandelingen.html" />
     <Content Include="pages\activiteiten\pages\wandelmeditatie.html" />
+    <Content Include="pages\colofon.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
