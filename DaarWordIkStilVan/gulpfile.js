@@ -32,7 +32,7 @@ var mainbowerfiles = require("main-bower-files")();
 var config = require("./gulpfile.config.json");
 var paths = config.paths;
 
-var tsProject = plugins.typescript.createProject("./content/ts/tsconfig.json", { sortOutput: true });
+var tsProject = plugins.typescript.createProject("./content/ts/tsconfig.json");
 //var tsProject = plugins.typescript.createProject("./content/ts/tsconfig.json", { sortOutput: true, declaration: true });
 
 gulp.task("default", ["watch"]);
@@ -186,7 +186,7 @@ gulp.task("ts", function () {
     gulp.src(paths.ts.source, { base: paths.webroot })
         .pipe(plugins.debug())
         .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.typescript(tsProject))
+        .pipe(tsProject())
         .pipe(plugins.concat(paths.ts.target))
         .pipe(plugins.sourcemaps.write())
         .pipe(plugins.debug())
@@ -195,7 +195,7 @@ gulp.task("ts", function () {
     //var tsResult = gulp.src(paths.ts.source, { base: paths.webroot })
     //    .pipe(plugins.debug())
     //    .pipe(plugins.sourcemaps.init())
-    //    .pipe(plugins.typescript(tsProject));
+    //    .pipe(tsProject());
 
     //merge([
     //    tsResult.dts
