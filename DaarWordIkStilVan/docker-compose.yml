@@ -1,0 +1,14 @@
+
+version: '2'
+
+services:
+  daarwordikstilvan:
+    image: daarwordikstilvan:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 3080:80
+      - 3443:443
