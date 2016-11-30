@@ -3,12 +3,15 @@ version: '2'
 
 services:
   daarwordikstilvan:
-    image: daarwordikstilvan:latest
+    image: daarwordikstilvan
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - .:/var/www/html
     ports:
-      - 3080:80
-      - 3443:443
+      - "3080:80"
+      - "3443:443"
+    hostname: "daarwordikstilvan"
+    extra_hosts:
+      - "localhost localhost.localdomain daarwordikstilvan:127.0.0.1"
