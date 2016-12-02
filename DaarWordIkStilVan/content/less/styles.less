@@ -2,18 +2,7 @@
 @import "fonts.less";
 @import "variables.less";
 
-@font-family-bootstrap-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-cookies-milk: "Cookies & Milk", @font-family-bootstrap-sans-serif;
-@font-family-numbers: @font-family-bootstrap-sans-serif;
-
-@text-color: @color-4;
-@link-color: @color-4;
-@input-color: @color-4;
-@input-color-placeholder: @color-6;
-@link-hover-color: @color-2;
-@brand-primary: @color-4;
-@brand-info: @color-6;
-
+// Body
 body {
     padding-top: 30px;
     padding-bottom: 20px;
@@ -24,16 +13,9 @@ body {
     text-align: justify;
 }
 
-@media (max-width: @grid-float-breakpoint-max) {
-    .navbar.mobile-green {
-        background-color: @color-6-seethrough;
-        border-radius: @border-radius-large;
-        padding: 5px;
-    }
-}
-
+// Links and anchors
 p a {
-    color: white;
+    color: @color-anchor;
 }
 
 a {
@@ -45,37 +27,28 @@ a {
 
 a:focus,
 a:hover {
-    color: white;
+    color: @color-anchor;
     text-decoration: none;
-    box-shadow: 0 0 7px 7px @color-2;
-    background-color: @color-2;
+    box-shadow: 0 0 7px 7px @link-hover-color;
+    background-color: @link-hover-color;
 
     h1 > & {
-        box-shadow: 0 -2px 7px 7px @color-2;
+        box-shadow: 0 -2px 7px 7px @color-link-hover-heading-box-shadow;
     }
 }
 
 .nav > li > a:hover,
 .nav > li > a:focus {
     box-shadow: none;
-    color: @color-2;
-    /*color: white;
-    text-decoration: none;
-    box-shadow: @color-2 0px -2px 3px 3px;
-    background-color: @color-2;*/
+    color: @link-hover-color;
 }
 
-// Forms, Buttons and Inputs
-@form-group-margin-bottom: 30px;
-@btn-default-color: @brand-info;
-@btn-default-border: darken(@brand-info, 5%);
-
-@border-radius-base: 10px;
-
+// Buttons
 .btn {
     text-transform: uppercase;
 }
 
+// Margins
 @media (max-width: @grid-float-breakpoint-max) {
     .mobile-margin-bottom {
         margin-bottom: 30px;
@@ -83,10 +56,6 @@ a:hover {
 }
 
 // Jumbotron
-@jumbotron-heading-color: white;
-@border-radius-large: 20px;
-@jumbotron-bg: @color-6;
-
 .jumbotron {
     h1,
     .h1 {
@@ -109,17 +78,14 @@ a:hover {
 }
 
 .see-through {
-    background-color: @color-6-seethrough;
+    background-color: @color-seethrough-background;
 
     a {
-        color: white;
+        color: @color-anchor;
     }
 }
 
 // Navbar
-@navbar-margin-bottom: 60px;
-@nav-link-hover-bg: transparent;
-
 .navbar {
     font-size: 35px;
     font-family: @font-family-cookies-milk;
@@ -130,15 +96,15 @@ a:hover {
     }
 
     .navbar-toggle {
-        border-color: @color-4;
+        border-color: @color-navbar-toggle;
 
         &:hover,
         &:focus {
-            background-color: @color-6;
+            background-color: @color-navbar-toggle-hover;
         }
 
         .icon-bar {
-            background-color: @color-4;
+            background-color: @color-navbar-icon-bar;
         }
     }
 
@@ -157,6 +123,15 @@ a:hover {
     }
 }
 
+// Mobile navbar
+@media (max-width: @grid-float-breakpoint-max) {
+    .navbar.mobile-green {
+        background-color: @color-navbar-mobile-background;
+        border-radius: @border-radius-large;
+        padding: 5px;
+    }
+}
+
 // Home
 .home {
     .navbar {
@@ -164,7 +139,7 @@ a:hover {
     }
 
     .jumbotron {
-        background-color: white;
+        background-color: @color-home-jumbotron-background;
 
         img.fill-out {
             width: 100%;
@@ -190,7 +165,7 @@ a:hover {
 
 // Loading
 .loading {
-    color: white;
+    color: @color-loading-text;
 
     img {
         width: 64px;
@@ -202,11 +177,11 @@ a:hover {
 .activiteiten {
     .jumbotron {
         h2, .h2 {
-            color: @color-4;
+            color: @color-activities-header;
         }
 
         b {
-            color: white;
+            color: @color-activities-subheader;
         }
     }
 }
@@ -225,7 +200,7 @@ a:hover {
 
     .activity-description {
         height: 100%;
-        border: 5px solid @color-5;
+        border: 5px solid @color-activity-description-border;
         border-radius: 0 20px 20px 0;
         width: ~"calc(100% - 150px)";
         float: left;
@@ -248,5 +223,5 @@ a:hover {
 }
 
 .validation {
-    color: red;
+    color: @color-validation;
 }

@@ -1,12 +1,10 @@
 ﻿// Groentinten
 @green-1: #537541;
 @green-2: #86b642;
-@green-2-seethrough: rgba(134, 182, 66, 0.9);
 @green-3: #a2c369;
 @green-4: #4e7b69;
 @green-5: #7ec397;
 @green-6: #9dcfad;
-@green-6-seethrough: rgba(157,207,173,0.9);
 
 // Paarstinten
 @purple-1: #5d6986;
@@ -27,27 +25,56 @@
 // Blauwtinten
 @blue-1: #244271;
 @blue-2: #215ba7;
-@blue-2-seethrough: rgba(33, 91, 167, 0.9);
 @blue-3: #5576b9;
 @blue-4: #216e89;
 @blue-5: #0eabdb;
 @blue-6: #68bbe3;
-@blue-6-seethrough: rgba(104,187,227,0.9);
-
-// Hoofdtinten
-@color-1: @green-1;
-@color-2: @green-2;
-@color-3: @green-3;
-@color-4: @blue-4;
-@color-5: @green-5;
-@color-6: @green-6;
-
-// Extra
-@color-2-seethrough: @green-2-seethrough;
-//@color-2-seethrough: @blue-2-seethrough;
-@color-6-seethrough: @green-6-seethrough;
-//@color-6-seethrough: @blue-6-seethrough;
 
 // Paths
 @font-path: "/content/fonts";
 @images-path: "/content/images";
+
+// Custom
+@custom-color: #d0e3ed;
+
+// Styling
+@color-anchor: #ffffff;
+@color-heading: #ffffff;
+@color-home-jumbotron-background: #ffffff;
+@color-loading-text: #ffffff;
+@color-validation: #ff0000;
+@color-background: @blue-6;
+@color-background-seethrough: fade(@blue-6, 90%);
+@color-navbar-mobile-background: @color-background-seethrough;
+@color-jumbotron-background: @color-background;
+@color-seethrough-background: @color-background-seethrough;
+@color-navbar-toggle: @blue-4;
+@color-navbar-toggle-hover: @green-6;
+@color-navbar-icon-bar: @blue-4;
+@color-activities-header: @blue-4;
+@color-activities-subheader: #ffffff;
+@color-activity-description-border: @blue-5;
+@color-link-hover-heading-box-shadow: @green-2;
+
+// Bootstrap font types
+@font-family-bootstrap-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-cookies-milk: "Cookies & Milk", @font-family-bootstrap-sans-serif;
+@font-family-numbers: @font-family-bootstrap-sans-serif;
+
+// Bootstrap styling
+@text-color: @blue-4;
+@link-color: @blue-4;
+@input-color: @blue-4;
+@input-color-placeholder: @blue-6;
+@link-hover-color: @green-2;
+@brand-primary: @blue-4;
+@brand-info: @green-4;
+@border-radius-large: 20px;
+@jumbotron-heading-color: @color-heading;
+@jumbotron-bg: @color-jumbotron-background;
+@navbar-margin-bottom: 60px;
+@nav-link-hover-bg: transparent;
+@form-group-margin-bottom: 30px;
+@btn-default-color: @brand-info;
+@btn-default-border: darken(@brand-info, 5%);
+@border-radius-base: 10px;
