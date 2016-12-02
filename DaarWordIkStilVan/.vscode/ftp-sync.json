@@ -1,0 +1,25 @@
+{
+    "remotePath": "./www/",
+    "host": "daarwordikstilvan.nl.transurl.nl",
+    "username": "daarwordikstilvan.nl",
+    "password": "GijsGoofy1",
+    "port": 22,
+    "protocol": "sftp",
+    "uploadOnSave": false,
+    "passive": true,
+    "debug": false,
+    "privateKeyPath": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.docker",
+        "\\bower_components",
+        "\\node_modules",
+        "\\bower.json",
+        "\\docker-compose.yml",
+        "\\Dockerfile",
+        "\\gulpfile.config.json",
+        "\\gulpfile.js",
+        "\\package.json"
+    ]
+}
