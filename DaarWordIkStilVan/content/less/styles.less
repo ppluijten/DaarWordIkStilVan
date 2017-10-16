@@ -14,11 +14,8 @@ body {
 }
 
 // Links and anchors
-p a {
-    color: @color-anchor;
-}
-
 a {
+    color: @color-anchor;
     -o-transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
     -moz-transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
     -webkit-transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
@@ -27,7 +24,7 @@ a {
 
 a:focus,
 a:hover {
-    color: @color-anchor;
+    color: @color-anchor-hover;
     text-decoration: none;
     box-shadow: 0 0 7px 7px @link-hover-color;
     background-color: @link-hover-color;
@@ -37,10 +34,15 @@ a:hover {
     }
 }
 
-.nav > li > a:hover,
-.nav > li > a:focus {
-    box-shadow: none;
-    color: @link-hover-color;
+// Menu anchors
+.nav > li > a {
+    color: @color-menu-anchor;
+
+    &:hover,
+    &:focus {
+        box-shadow: none;
+        color: @link-hover-color;
+    }
 }
 
 // Buttons
@@ -60,7 +62,6 @@ a:hover {
     h1,
     .h1 {
         font-family: @font-family-cookies-milk;
-        font-style: italic;
     }
 
     h2,
@@ -79,20 +80,15 @@ a:hover {
 
 .see-through {
     background-color: @color-seethrough-background;
-
-    a {
-        color: @color-anchor;
-    }
 }
 
 // Navbar
 .navbar {
-    font-size: 35px;
+    font-size: 28px;
     font-family: @font-family-cookies-milk;
-    font-style: italic;
 
     .navbar-brand {
-        font-size: 35px;
+        font-size: 28px;
     }
 
     .navbar-toggle {
@@ -208,8 +204,11 @@ a:hover {
 
         h1 {
             font-family: @font-family-cookies-milk;
-            font-style: italic;
             font-size: 28px;
+
+            a {
+                color: @color-heading-anchor;
+            }
         }
 
         p {
