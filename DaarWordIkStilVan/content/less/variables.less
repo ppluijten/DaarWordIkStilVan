@@ -38,12 +38,15 @@
 @custom-color: #d0e3ed;
 
 // Styling
-@color-anchor: #ffffff;
-@color-heading: #ffffff;
+@color-anchor: @blue-4; //#ffffff
+@color-anchor-hover: @color-anchor;
+@color-heading-anchor: @color-anchor;
+@color-menu-anchor: @blue-4;
+@color-heading: @blue-4;
 @color-home-jumbotron-background: #ffffff;
 @color-loading-text: #ffffff;
 @color-validation: #ff0000;
-@color-background: @blue-6;
+@color-background: @custom-color; //blue-6
 @color-background-seethrough: fade(@color-background, 90%);
 @color-navbar-mobile-background: @color-background-seethrough;
 @color-jumbotron-background: @color-background;
@@ -53,7 +56,7 @@
 @color-navbar-icon-bar: @blue-4;
 @color-activities-header: @blue-4;
 @color-activities-subheader: #ffffff;
-@color-activity-description-border: @blue-5;
+@color-activity-description-border: @custom-color; //@blue-5
 @color-link-hover-heading-box-shadow: @green-2;
 
 // Bootstrap font types
@@ -72,6 +75,9 @@
 @border-radius-large: 20px;
 @jumbotron-heading-color: @color-heading;
 @jumbotron-bg: @color-jumbotron-background;
+@jumbotron-font-size: @font-size-large;
+@jumbotron-heading-font-size: 32px;
+@line-height-base: 1.111111111;
 @navbar-margin-bottom: 60px;
 @nav-link-hover-bg: transparent;
 @form-group-margin-bottom: 30px;

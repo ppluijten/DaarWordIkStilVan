@@ -2,15 +2,11 @@
   "activities": [
     {
       "name": "stiltewandelingen",
-      "title": "Stiltewandeling op de Groote Heide in Venlo"
+      "title": "stiltewandeling"
     },
     {
       "name": "wandelmeditatie",
-      "title": "Wandelmeditatie"
-    },
-    {
-      "name": "natuurlijke_begeleiding",
-      "title": "'Natuurlijke' begeleiding"
+      "title": "wandelmeditatie"
     }
   ]
 }
